@@ -10,7 +10,6 @@ open class Calculator(){
         while (true) {
             println("첫번째 수를 입력하세요.")
             val input2 = readln()
-
             if(input2.all{ it.isDigit() }){
                 num1 = input2.toInt()
                 break
@@ -28,6 +27,24 @@ open class Calculator(){
             }else{
                 println("잘못된 입력입니다.")
             }
+        }
+    }
+    fun addFun(){
+        println("\nnum1 + num2 = ${num1 + num2}입니다.\n")
+    }
+    fun substractFun(){
+        println("\nnum1 + num2 = ${num1 + num2}입니다.\n")
+    }
+    fun multiplyFun(){
+        println("\nnum1 * num2 = ${num1 * num2}입니다.\n")
+    }
+    fun divideFun(){
+        //나누기 0에 대한 예외처리
+        if(num2 == 0){
+            println("\n0으로는 나눌 수 없습니다.\n")
+        }
+        else{
+            println("\nnum1 / num2 = ${num1 / num2}입니다.\n")
         }
     }
 }
