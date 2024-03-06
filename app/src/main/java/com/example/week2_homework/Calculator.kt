@@ -5,6 +5,7 @@ open class Calculator(){
     //변수 선언
     var num1 = 0
     var num2 = 0
+    var answer = 0
     init {
         //숫자를 입력할 때까지 반복
         while (true) {
@@ -29,14 +30,17 @@ open class Calculator(){
             }
         }
     }
+    open fun makeAnswer(): Int{
+        return answer
+    }
     fun addFun(){
-        println("\nnum1 + num2 = ${num1 + num2}입니다.\n")
+        println("\nnum1 + num2 = ${makeAnswer()}입니다.\n")
     }
     fun substractFun(){
-        println("\nnum1 + num2 = ${num1 + num2}입니다.\n")
+        println("\nnum1 + num2 = ${makeAnswer()}입니다.\n")
     }
     fun multiplyFun(){
-        println("\nnum1 * num2 = ${num1 * num2}입니다.\n")
+        println("\nnum1 * num2 = ${makeAnswer()}입니다.\n")
     }
     fun divideFun(){
         //나누기 0에 대한 예외처리
@@ -44,7 +48,7 @@ open class Calculator(){
             println("\n0으로는 나눌 수 없습니다.\n")
         }
         else{
-            println("\nnum1 / num2 = ${num1 / num2}입니다.\n")
+            println("\nnum1 / num2 = ${makeAnswer()}입니다.\n")
         }
     }
 }
