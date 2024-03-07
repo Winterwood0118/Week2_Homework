@@ -18,6 +18,7 @@ fun main() {
                 println("종료합니다.")
                 break
             }
+
             "1" -> {
                 println("더하기를 선택하셨습니다.\n")
                 calc = Calculator(AddOperation())
@@ -44,32 +45,11 @@ fun main() {
             }
         }
         println("첫번째 숫자를 입력하세요.")
-        while (true) {
-            val input2 = readln()
-            if (input2.all { it.isDigit() }) {
-                num1 = input2.toInt()
-                break
-            } else if (input2.all { it.isDigit() or (it == '.') }) {
-                num1 = input2.toDouble()
-                break
-            } else {
-                println("정수, 실수만 입력하세요.")
-            }
-        }
+        num1 = takeNumber()
 
         println("두번째 숫자를 입력하세요.")
-        while (true) {
-            val input2 = readln()
-            if (input2.all { it.isDigit() }) {
-                num2 = input2.toInt()
-                break
-            } else if (input2.all { it.isDigit() or (it == '.') }) {
-                num2 = input2.toDouble()
-                break
-            } else {
-                println("정수만 입력하세요.")
-            }
-        }
+        num2 = takeNumber()
+
         if (num1 is Int && num2 is Int) {
             calc.result(num1.toInt(), num2.toInt())
         } else {
@@ -77,4 +57,21 @@ fun main() {
         }
     }
 
+}
+
+private fun takeNumber(): Number {
+    val number: Number
+    while (true) {
+        val input = readln()
+        if (input.all { it.isDigit() }) {
+            number = input.toInt()
+            break
+        } else if (input.all { it.isDigit() or (it == '.') }) {
+            number = input.toDouble()
+            break
+        } else {
+            println("정수만 입력하세요.")
+        }
+    }
+    return number
 }
