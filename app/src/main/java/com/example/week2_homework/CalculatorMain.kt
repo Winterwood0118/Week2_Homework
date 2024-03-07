@@ -11,10 +11,10 @@ fun main() {
     var num2: Int
     while (true) {
         println("아래 보기 중 사용할 기능의 번호를 입력하세요.")
-        println("0. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
+        println("-1. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
         val input1 = readln()
         when (input1) {
-            "0" -> break
+            "-1" -> break
             "1" -> {
                 calc = Calculator(AddOperation())
             }
