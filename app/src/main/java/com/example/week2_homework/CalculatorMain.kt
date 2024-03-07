@@ -5,10 +5,10 @@ package com.example.week2_homework
 // 2-2 연산자 따라서 다른 오퍼레이션 불러오기
 // 3. 예외처리
 fun main() {
-    println("이 프로그램은 두 정수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
+    println("이 프로그램은 두 정수 또는 두 실수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
     var calc: Calculator
-    var num1: Int
-    var num2: Int
+    var num1: Number
+    var num2: Number
     while (true) {
         println("아래 보기 중 사용할 기능의 번호를 입력하세요.")
         println("-1. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
@@ -42,8 +42,11 @@ fun main() {
             if (input2.all { it.isDigit() }) {
                 num1 = input2.toInt()
                 break
+            } else if (input2.all { it.isDigit() or (it == '.') }) {
+                num1 = input2.toDouble()
+                break
             } else {
-                println("정수만 입력하세요.")
+                println("정수, 실수만 입력하세요.")
             }
         }
 
@@ -53,11 +56,18 @@ fun main() {
             if (input2.all { it.isDigit() }) {
                 num2 = input2.toInt()
                 break
+            } else if (input2.all { it.isDigit() or (it == '.') }) {
+                num2 = input2.toDouble()
+                break
             } else {
                 println("정수만 입력하세요.")
             }
         }
-        calc.result(num1, num2)
+        if(num1 is Int && num2 is Int){
+            calc.result(num1.toInt(),num2.toInt())
+        }else{
+            calc.result(num1.toDouble(), num2.toDouble())
+        }
     }
 
 }
