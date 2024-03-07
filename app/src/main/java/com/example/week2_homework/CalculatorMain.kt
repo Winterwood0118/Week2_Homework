@@ -1,39 +1,59 @@
 package com.example.week2_homework
 
-fun main(){
-    println("이 프로그램은 두 정수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.\n")
-    // 무한루프를 통해 -1을 입력받지 않으면 프로그램을 반복
+// 1. 종료까지 무한루프 기능 추가
+// 2. 사용할 연산자, 숫자 받아오기
+// 2-2 연산자 따라서 다른 오퍼레이션 불러오기
+// 3. 예외처리
+fun main() {
+    println("이 프로그램은 두 정수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
+    var calc: Calculator
+    var num1: Int
+    var num2: Int
     while (true) {
         println("아래 보기 중 사용할 기능의 번호를 입력하세요.")
-        println("1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
-        println("-1을 입력하면 계산기가 종료됩니다.")
+        println("0. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
         val input1 = readln()
         when (input1) {
+            "0" -> break
             "1" -> {
-                println("더하기를 선택했습니다.")
-                val calc = AddOperation()
+                calc = AddOperation()
             }
             "2" -> {
-                println("빼기를 선택했습니다.")
-                val calc = SubstractOperation()
+                calc = SubstractOperation()
             }
             "3" -> {
-                println("곱하기를 선택했습니다.")
-                val calc = MultiplyOperation()
+                calc = MultiplyOperation()
             }
             "4" -> {
-                println("나누기를 선택했습니다.")
-                val calc = DivideOperation()
-            }
-            "-1" -> {
-                println("계산기를 종료합니다.")
-                break
+                calc = DivideOperation()
             }
             else -> {
-                println("잘못된 입력입니다.\n")
+                println("올바른 번호를 입력해주세요.\n")
                 continue
             }
         }
+        println("첫번째 숫자를 입력하세요.")
+        while (true) {
+            val input2 = readln()
+            if (input2.all { it.isDigit() }) {
+                num1 = input2.toInt()
+                break
+            } else {
+                println("정수만 입력하세요.")
+            }
+        }
 
+        println("두번째 숫자를 입력하세요.")
+        while (true) {
+            val input2 = readln()
+            if (input2.all { it.isDigit() }) {
+                num2 = input2.toInt()
+                break
+            } else {
+                println("정수만 입력하세요.")
+            }
+        }
+        calc.result(num1,num2)
     }
+
 }
