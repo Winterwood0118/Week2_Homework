@@ -16,17 +16,21 @@ fun main() {
         when (input1) {
             "0" -> break
             "1" -> {
-                calc = AddOperation()
+                calc = Calculator(AddOperation())
             }
+
             "2" -> {
-                calc = SubstractOperation()
+                calc = Calculator(SubstractOperation())
             }
+
             "3" -> {
-                calc = MultiplyOperation()
+                calc = Calculator(MultiplyOperation())
             }
+
             "4" -> {
-                calc = DivideOperation()
+                calc = Calculator(DivideOperation())
             }
+
             else -> {
                 println("올바른 번호를 입력해주세요.\n")
                 continue
@@ -53,7 +57,7 @@ fun main() {
                 println("정수만 입력하세요.")
             }
         }
-        calc.result(num1,num2)
+        calc.result(num1, num2)
     }
 
 }
