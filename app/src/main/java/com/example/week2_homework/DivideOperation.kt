@@ -1,6 +1,6 @@
 package com.example.week2_homework
 
-class DivideOperation : Operate() {
+class DivideOperation : AbstractOperation() {
     override fun operate(num1: Int, num2: Int) {
         if(num2 == 0){
             println("0으로는 나눌 수 없습니다.")
