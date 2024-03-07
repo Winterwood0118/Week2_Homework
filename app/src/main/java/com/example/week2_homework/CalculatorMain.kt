@@ -60,17 +60,19 @@ fun main() {
 }
 
 private fun takeNumber(): Number {
-    val number: Number
+    var number: Number
     while (true) {
         val input = readln()
-        if (input.all { it.isDigit() }) {
-            number = input.toInt()
-            break
-        } else if (input.all { it.isDigit() or (it == '.') }) {
-            number = input.toDouble()
-            break
-        } else {
-            println("정수만 입력하세요.")
+        try {
+            if (input.contains('.')) {
+                number = input.toDouble()
+                break
+            } else {
+                number = input.toInt()
+                break
+            }
+        } catch (e: Exception) {
+            println("올바른 수만 입력하세요.")
         }
     }
     return number
