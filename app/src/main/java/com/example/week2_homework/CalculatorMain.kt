@@ -63,9 +63,9 @@ fun main() {
                 println("정수만 입력하세요.")
             }
         }
-        if(num1 is Int && num2 is Int){
-            calc.result(num1.toInt(),num2.toInt())
-        }else{
+        if (num1 is Int && num2 is Int) {
+            calc.result(num1.toInt(), num2.toInt())
+        } else {
             calc.result(num1.toDouble(), num2.toDouble())
         }
     }
