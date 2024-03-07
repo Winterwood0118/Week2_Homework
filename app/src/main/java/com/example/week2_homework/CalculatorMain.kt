@@ -5,7 +5,7 @@ package com.example.week2_homework
 // 2-2 연산자 따라서 다른 오퍼레이션 불러오기
 // 3. 예외처리
 fun main() {
-    println("이 프로그램은 두 정수 또는 두 실수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
+    println("이 프로그램은 두 수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
     var calc: Calculator
     var num1: Number
     var num2: Number
@@ -14,20 +14,27 @@ fun main() {
         println("-1. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
         val input1 = readln()
         when (input1) {
-            "-1" -> break
+            "-1" -> {
+                println("종료합니다.")
+                break
+            }
             "1" -> {
+                println("더하기를 선택하셨습니다.\n")
                 calc = Calculator(AddOperation())
             }
 
             "2" -> {
+                println("빼기를 선택하셨습니다.\n")
                 calc = Calculator(SubstractOperation())
             }
 
             "3" -> {
                 calc = Calculator(MultiplyOperation())
+                println("곱하기를 선택하셨습니다.\n")
             }
 
             "4" -> {
+                println("나누기를 선택하셨습니다.\n")
                 calc = Calculator(DivideOperation())
             }
 
