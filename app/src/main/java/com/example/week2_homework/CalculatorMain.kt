@@ -1,9 +1,6 @@
 package com.example.week2_homework
 
-// 1. 종료까지 무한루프 기능 추가
-// 2. 사용할 연산자, 숫자 받아오기
-// 2-2 연산자 따라서 다른 오퍼레이션 불러오기
-// 3. 예외처리
+
 fun main() {
     println("이 프로그램은 두 수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
     var calc: Calculator
