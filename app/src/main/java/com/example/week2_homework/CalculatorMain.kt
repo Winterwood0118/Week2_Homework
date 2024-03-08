@@ -1,6 +1,6 @@
 package com.example.week2_homework
 
-
+// 제출용 기룍
 fun main() {
     println("이 프로그램은 두 수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
     while (true) {
