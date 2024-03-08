@@ -7,7 +7,7 @@ class DivideOperation : AbstractOperation() {
         if (num2 == 0) {
             println("0으로는 나눌 수 없습니다.")
         } else {
-            println("\n$num1 / $num2 = ${num1 / num2}입니다.\n")
+            println("\n$num1 / $num2 = ${num1 / num2}이며 나머지는 ${num1 % num2}입니다.\n")
         }
     }
 
