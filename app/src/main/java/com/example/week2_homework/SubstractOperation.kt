@@ -4,12 +4,14 @@ import kotlin.math.round
 
 class SubstractOperation : AbstractOperation() {
     override fun operate(num1: Int, num2: Int): Int {
-        println("\n$num1 - $num2 = ${num1 - num2}입니다.\n")
-        return num1 - num2
+        val answer = num1 - num2
+        println("\n$num1 - $num2 = ${answer}입니다.\n")
+        return answer
     }
 
     override fun operate(num1: Double, num2: Double): Double {
-        println("\n$num1 - $num2 = ${round((num1 - num2) * 100.0) / 100.0}입니다.\n")
-        return round((num1 - num2) * 100.0) / 100.0
+        val answer = round((num1 - num2) * 100.0) / 100.0
+        println("\n$num1 - $num2 = ${answer}입니다.\n")
+        return answer
     }
 }

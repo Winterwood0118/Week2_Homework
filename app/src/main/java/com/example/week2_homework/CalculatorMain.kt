@@ -3,10 +3,8 @@ package com.example.week2_homework
 
 fun main() {
     println("이 프로그램은 두 수 사이에서 간단한 사칙연산을 실행하는 계산기입니다.")
-    var calc: Calculator
-    var num1: Number
-    var num2: Number
     while (true) {
+        val calc: Calculator
         println("아래 보기 중 사용할 기능의 번호를 입력하세요.")
         println("-1. 종료하기 \t 1. 더하기 \t 2. 빼기 \t 3. 곱하기 \t 4. 나누기")
         val input1 = readln()
@@ -42,10 +40,10 @@ fun main() {
             }
         }
         println("첫번째 숫자를 입력하세요.")
-        num1 = takeNumber()
+        val num1 = takeNumber()
 
         println("두번째 숫자를 입력하세요.")
-        num2 = takeNumber()
+        val num2 = takeNumber()
 
         if (num1 is Int && num2 is Int) {
             calc.result(num1.toInt(), num2.toInt())
